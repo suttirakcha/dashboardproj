@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}{{ blogdetail.title }}{% endblock %}
+
+{% block content %}
+  <h1 class='text-4xl font-bold text-center mb-3'>{{ blogdetail.title }}</h1>
+  <h4 class='italic text-center text-sm'>Published on {{ blogdetail.created_at }}</h4>
+  {% if blogdetail.image %}
+    <img src={{ blogdetail.image.url }} class='my-5 rounded-md h-[500px] max-w-2xl mx-auto'>
+  {% else %}
+    <div class='bg-zinc-200 rounded-md h-[500px] my-5 max-w-2xl w-full mx-auto'></div>
+  {% endif %}
+  
+  <div class='mt-10'>
+    <p>{{ blogdetail.content }}</p>
+  </div>
+{% endblock %}

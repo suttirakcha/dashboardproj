@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'style.css' %}" rel="stylesheet">
+  <title>{% block title %}{% endblock %}</title>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body>
+  <header class='bg-blue-200 flex justify-between items-center p-4 fixed w-full top-0'>
+    <div>
+      <h1 class='text-3xl font-bold'>My Blog Page</h1>
+    </div>
+    <nav class='flex gap-x-4'>
+      <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Contact Us</button>
+      <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign in</button>
+    </nav>
+  </header>
+  <div class='container main-body'>
+    {% block content %}
+    {% endblock %}
+  </div>
+  <footer class='p-4 flex justify-between bg-cyan-600 text-white'>
+    <h1>Created by Me.</h1>
+  </footer>
+</body>
+</html>
