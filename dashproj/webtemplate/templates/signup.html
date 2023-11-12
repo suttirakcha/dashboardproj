@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign up{% endblock %}
+
+{% block content %}
+  <section class='max-w-md mx-auto border rounded-lg p-5'>
+    <h1 class='text-center text-3xl font-bold mb-8'>Sign up</h1>
+
+    <form class='flex flex-col gap-y-4' method='POST'>
+      {% csrf_token %}
+
+      {{ form.non_field_errors }}
+      <div class='flex flex-col gap-y-1'>
+        <label for='username' class='text-lg'>Username</label>
+        {{ form.username }}
+      </div>
+      <div class='flex flex-col gap-y-1'>
+        <label for='username' class='text-lg'>Email</label>
+        {{ form.email }}
+      </div>
+      <div class='flex flex-col gap-y-1'>
+        <label for='password' class='text-lg'>Password</label>
+        {{ form.password1 }}
+      </div>
+      <div class='flex flex-col gap-y-1'>
+        <label for='password' class='text-lg'>Re-Enter Password</label>
+        {{ form.password2 }}
+      </div>
+      <button type='submit' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign up</button>
+    </form>
+  </section>
+{% endblock %}

@@ -10,3 +10,23 @@
 .blog-card {
     height:100%;
 }
+
+#header {
+    position:absolute;
+    top:0;
+}
+
+#header.active {
+    animation:headerAnimWhenScroll 500ms forwards;
+}
+
+@keyframes headerAnimWhenScroll {
+    from {
+        position:fixed;
+        top:-10%;
+    }
+    to {
+        position:fixed;
+        top:0
+    }
+}

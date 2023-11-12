@@ -11,23 +11,45 @@
   <script src='https://cdn.tailwindcss.com'></script>
 </head>
 <body>
-  <header class='bg-blue-200 p-4 fixed w-full top-0'>
+  <header class='bg-blue-200 p-4 w-full' id='header'>
     <div class='container flex justify-between items-center'>
       <a href="/">
         <h1 class='text-3xl font-bold'>Mydjango</h1>
       </a>
       <nav class='flex gap-x-4'>
         <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Contact Us</button>
-        <a href='signin/' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign in</a>
+        {% if request.user.is_authenticated %}
+          <a href='/signin/' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign out</a>
+        {% else %}
+          <a href='/signin/' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign in</a>
+        {% endif %}
       </nav>
     </div>
   </header>
+  {% block hero %}{% endblock %}
   <div class='container main-body'>
     {% block content %}
     {% endblock %}
   </div>
   <footer class='p-4 flex justify-between bg-cyan-600 text-white'>
     <h1>Created by Me.</h1>
+    <button onclick="backToTop()">Back to top</button>
   </footer>
+
+  <script>
+    function backToTop(){
+      window.scrollTo(0,0);
+    }
+
+    let header = document.getElementById("header");
+
+    window.addEventListener('scroll', function(){
+      if (window.scrollY > 100){
+        header.classList.add("active")
+      } else {
+        header.classList.remove("active")
+      }
+    })
+  </script>
 </body>
 </html>
