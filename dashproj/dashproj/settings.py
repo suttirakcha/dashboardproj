@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     'blogadmin',
     'bootstrap5',
-    'okommerce'
+    'okommerce',
+    'webtemplate'
 ]
 
 # CORS_ALLOWED_ORIGINS = ['http://localhost:5173/']

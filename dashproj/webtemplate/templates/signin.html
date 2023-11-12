@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <section class='max-w-md mx-auto border rounded-lg p-5'>
+    <h1 class='text-center text-3xl font-bold mb-8'>Sign in</h1>
+
+    <form action='/' class='flex flex-col gap-y-4' method='GET'>
+      <div class='flex flex-col gap-y-1'>
+        <label for='username' class='text-lg'>Username</label>
+        <input type='text' class='border px-3 py-2 rounded-md text-sm' name='username' id='username' required>
+      </div>
+      <div class='flex flex-col gap-y-1'>
+        <label for='password' class='text-lg'>Password</label>
+        <input type='password' class='border px-3 py-2 rounded-md text-sm' name='password' id='password' required>
+      </div>
+      <button type='submit' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign in</button>
+    </form>
+  </section>
+{% endblock %}

@@ -5,7 +5,7 @@ from .models import *
 
 def first_page(request):
     output = BlogPost.objects.filter(status='published')
-    return render(request, "index.html", {"blogs": output})
+    return render(request, "blog-page.html", {"blogs": output})
 
 def add_post(request):
     return render(request, "blog-create.html")

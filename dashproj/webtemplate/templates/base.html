@@ -11,14 +11,16 @@
   <script src='https://cdn.tailwindcss.com'></script>
 </head>
 <body>
-  <header class='bg-blue-200 flex justify-between items-center p-4 fixed w-full top-0'>
-    <div>
-      <h1 class='text-3xl font-bold'>My Blog Page</h1>
+  <header class='bg-blue-200 p-4 fixed w-full top-0'>
+    <div class='container flex justify-between items-center'>
+      <a href="/">
+        <h1 class='text-3xl font-bold'>Mydjango</h1>
+      </a>
+      <nav class='flex gap-x-4'>
+        <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Contact Us</button>
+        <a href='signin/' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign in</a>
+      </nav>
     </div>
-    <nav class='flex gap-x-4'>
-      <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Contact Us</button>
-      <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign in</button>
-    </nav>
   </header>
   <div class='container main-body'>
     {% block content %}
