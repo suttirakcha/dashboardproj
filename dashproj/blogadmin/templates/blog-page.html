@@ -4,9 +4,9 @@
 
 {% block content %}
   <h1 class='text-4xl font-bold text-center mb-8'>Blog lists</h1>
-  <div class='grid grid-cols-3 gap-4'>
+  <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
     {% for blog in blogs %}
-      <a href={{ blog.id }}>
+      <a href={{ blog.id }} class='blogs'>
         <div class='border p-4 rounded-md blog-card'>
           {% if blog.image %}
             <img class='rounded-md h-[300px] w-full object-cover' src="{{ blog.image.url }}" alt="{{ blog.image.url }}">
