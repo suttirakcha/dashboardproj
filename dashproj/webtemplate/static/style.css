@@ -49,6 +49,28 @@
     display:none;
 }
 
+#navbar-mobile-overlay {
+    z-index:3;
+    background-color:rgba(0,0,0,0.5);
+    position:fixed;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+}
+
+#navbar-mobile-menu {
+    max-width:400px;
+    width:100%;
+    background-color:white;
+    position:fixed;
+    height:100%;
+    top:0;
+    right:0;
+    z-index:10;
+    padding:40px;
+}
+
 @media (max-width:1023px){
     #navbar {
         display:none;

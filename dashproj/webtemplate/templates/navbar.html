@@ -1,13 +1,13 @@
-<nav class='flex w-1/2 justify-center'>
+<nav class='flex lg:w-1/2 justify-center flex-col lg:flex-row'>
   <ul>
-    <li class='flex gap-x-10'>
+    <li class='flex gap-x-10 flex-col lg:flex-row'>
       <a href='/' class='hover:text-blue-800'>Home</a>
       <a href='/blogs' class='hover:text-blue-800'>Blog</a>
       <a href='' class='hover:text-blue-800'>About Us</a>
     </li>
   </ul>
 </nav>
-<nav class='flex w-1/2 gap-x-4 justify-end'>
+<nav class='flex lg:w-1/2 gap-x-4 justify-end flex-col lg:flex-row'>
   <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Contact Us</button>
   {% if request.user.is_authenticated %}
     <a href='/signin/' class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Sign out</a>
