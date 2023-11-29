@@ -4,10 +4,14 @@ from .models import *
 # Register your models here.
 
 class ProductLists(admin.ModelAdmin):
-    list_display = ['name', 'regular_price', 'sales_price', 'created_at', 'updated_at']
+    list_display = ['product_name', 'regular_price', 'sales_price', 'product_category', 'created_at', 'updated_at']
 
 class AddressLists(admin.ModelAdmin):
     list_display = ['address_title', 'city_or_county', 'state_or_province', 'country']
 
+class ProductCategoryLists(admin.ModelAdmin):
+    list_display = ['category']
+
 admin.site.register(Product, ProductLists)
 admin.site.register(Address, AddressLists)
+admin.site.register(ProductCategory, ProductCategoryLists)
