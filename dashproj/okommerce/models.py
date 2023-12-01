@@ -42,10 +42,13 @@ class Address(models.Model):
     city_or_county = models.CharField(max_length=255)
     state_or_province = models.CharField(max_length=255)
     country = models.CharField(max_length=255, choices=COUNTRY_CHOICE, default='Thailand')
-    postal_code = models.IntegerField()
+    postal_code = models.IntegerField(blank=True, null=True)
 
     class Meta:
         verbose_name_plural = "Addresses"
+
+    def __str__(self):
+        return self.address_title
 
 class Promotion(models.Model):
     promotion_name = models.CharField(max_length=255)
