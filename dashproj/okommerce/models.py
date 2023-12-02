@@ -30,7 +30,7 @@ class Product(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.product_name
 
     def clean(self):
         if self.sales_price and self.sales_price > self.regular_price:
