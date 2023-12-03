@@ -25,7 +25,7 @@ class Product(models.Model):
     amount = models.IntegerField()
     product_category = models.ForeignKey(ProductCategory, related_name='product_name', on_delete=models.CASCADE)
     regular_price = models.DecimalField(max_digits=10,decimal_places=2)
-    sales_price = models.DecimalField(max_digits=10,decimal_places=2,blank=True)
+    sales_price = models.DecimalField(max_digits=10,decimal_places=2,blank=True,null=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
