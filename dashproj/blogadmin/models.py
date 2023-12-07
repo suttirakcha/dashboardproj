@@ -8,7 +8,7 @@ STATUS_CHOICE = (
 )
 
 class BlogCategory(models.Model):
-    category = models.CharField(max_length=255)
+    category = models.CharField(max_length=255, unique=True)
 
     class Meta:
         verbose_name_plural = "Blog categories"

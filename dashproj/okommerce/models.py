@@ -10,7 +10,7 @@ PROMOTION_TYPE_CHOICE = (
 )
 
 class ProductCategory(models.Model):
-    category = models.CharField(max_length=255)
+    category = models.CharField(max_length=255, unique=True)
 
     class Meta:
         verbose_name_plural = "Product categories"
