@@ -80,6 +80,33 @@
     padding:40px;
 }
 
+.accordion-title {
+    background-color:#35bcde;
+    padding:12px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .accordion-title svg {
+    transition:transform 300ms;
+  }
+
+  .accordion-title.active svg {
+    transform:rotate(180deg);
+    transition:transform 300ms;
+  }
+  
+  .accordion-desc {
+    padding:12px;
+    display:none;
+    background:#BFDBFE;
+  }
+  
+  .accordion-desc.active {
+    display:block;
+  }
+
 @media (max-width:1023px){
     #navbar {
         display:none;
