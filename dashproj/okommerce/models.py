@@ -50,5 +50,10 @@ class Address(models.Model):
     def __str__(self):
         return self.address_title
 
-class Promotion(models.Model):
-    promotion_name = models.CharField(max_length=255)
+class MarketingCampaign(models.Model):
+    campaign_name = models.CharField(max_length=255)
+    campaign_description = models.TextField()
+    campaign_image = models.ImageField(upload_to='okommerz', blank=True, null=True)
+
+    def __str__(self):
+        return self.campaign_name

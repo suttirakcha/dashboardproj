@@ -12,6 +12,10 @@ class AddressLists(admin.ModelAdmin):
 class ProductCategoryLists(admin.ModelAdmin):
     list_display = ['category']
 
+class MarketingCampaignLists(admin.ModelAdmin):
+    list_display = ['campaign_name', 'campaign_description']
+
 admin.site.register(Product, ProductLists)
 admin.site.register(Address, AddressLists)
 admin.site.register(ProductCategory, ProductCategoryLists)
+admin.site.register(MarketingCampaign, MarketingCampaignLists)
