@@ -42,8 +42,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'corsheaders',
     'rest_framework',
+    'corsheaders',
     'blogadmin',
     'okommerce',
     'webtemplate',
@@ -140,6 +140,8 @@ MEDIA_ROOT = BASE_DIR / "media"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-CORS_ORIGIN_WHITELIST = [
-     'http://localhost:3000'
+CORS_ORIGIN_ALLOW_ALL = True
+
+CORS_ORIGIN_ORIGINS = [
+     'http://localhost:5173'
 ]

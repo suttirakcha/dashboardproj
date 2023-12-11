@@ -21,6 +21,7 @@
     top:0;
     height:var(--header-height);
     display:flex;
+    z-index:99;
 }
 
 #header.active {
@@ -128,14 +129,16 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    margin-top:80px;
+    margin-top:var(--header-height);
     height:500px;
+    touch-action: pan-y;
 }
 
 .carousel-track {
     display: flex;
     min-height:500px;
     transition: transform 0.4s;
+    will-change: transform;
 }
 
 .carousel-item {
@@ -184,10 +187,23 @@
     width:100%;
 }
 
+.carousel-circle {
+    width:10px;
+    height:10px;
+    border-radius:999px;
+    background-color:white;
+    opacity:0.5;
+    cursor:pointer;
+}
+
+.carousel-circle.active {
+    opacity:1;
+}
+
 #prevButton {
-    left: 30px;
+    left: 20px;
 }
 
 #nextButton {
-    right: 30px;
+    right: 20px;
 }

@@ -21,9 +21,10 @@
     </svg>
   </button>
   {% endif %}
-  <div class='carousel-circles flex gap-x-2 absolute bottom-5 justify-center w-full'>
-    <div class='w-3 h-3 rounded-full bg-gray-300'></div>
-    <div class='w-3 h-3 rounded-full bg-gray-300'></div>
+  <div class='carousel-circles'>
+    {% for x in carousels %}
+    <div class='carousel-circle'></div>
+    {% endfor %}
   </div>
 </div>
 <script>
@@ -32,28 +33,39 @@
     const items = document.querySelectorAll('.carousel-item');
     const prevButton = document.getElementById('prevButton');
     const nextButton = document.getElementById('nextButton');
+    const circles = document.querySelectorAll('.carousel-circle');
     let currentIndex = 0;
+
+    circles[currentIndex].classList.toggle('active');
 
     prevButton.addEventListener('click', () => moveCarousel(-1));
     nextButton.addEventListener('click', () => moveCarousel(1));
 
     function moveCarousel(direction) {
-        currentIndex += direction;
+      currentIndex += direction;
 
-        if (currentIndex < 0) {
-            currentIndex = items.length - 1;
-        } else if (currentIndex >= items.length) {
-            currentIndex = 0;
-        }
+      if (currentIndex < 0) {
+        currentIndex = items.length - 1;
+      } else if (currentIndex >= items.length) {
+        currentIndex = 0;
+      }
 
-        updateCarousel();
+      updateCarousel(currentIndex);
     }
 
-    function updateCarousel() {
-        const newPosition = -currentIndex * 100 + "%";
-        track.style.transform = `translateX(${newPosition})`;
+    function updateCarousel(index) {
+      currentIndex = index
+      const newPosition = -index * 100 + "%";
+      track.style.transform = `translateX(${newPosition})`;
+
+      circles.forEach((circle, i) => {
+        circle.classList.toggle('active', i === index)
+      })
     }
-    setInterval(() => moveCarousel(1), 5000)
+
+    circles.forEach((circle, i) => {
+      circle.addEventListener('click', () => updateCarousel(i))
+    })
 });
 
 </script>

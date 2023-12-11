@@ -18,11 +18,11 @@
     <p>{{ product.description }} </p>
     {% if product.sales_price %}
       <div class='flex items-center gap-x-2'>
-        <p class='line-through text-red-400 text-xs'>{{ product.regular_price }}</p>
-        <p>{{ product.sales_price }}</p>
+        <p class='line-through text-red-400 text-xs'>฿{{ product.regular_price }}</p>
+        <p>฿{{ product.sales_price }}</p>
       </div>
     {% else %}
-      <p>{{ product.regular_price }}</p>
+      <p>฿{{ product.regular_price }}</p>
     {% endif %}
         <button class='bg-blue-500 px-4 py-2 text-white rounded-md w-full mt-4'>Add to cart</button>
   </div>
