@@ -123,3 +123,71 @@
         transition:transform 300ms;
     }
 }
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-top:80px;
+    height:500px;
+}
+
+.carousel-track {
+    display: flex;
+    min-height:500px;
+    transition: transform 0.4s;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background-color:white;
+    opacity:0.5;
+    border-radius:999px;
+    width:40px;
+    height:40px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:opacity 300ms, left 300ms, right 300ms;
+}
+
+.carousel-container:hover .carousel-button {
+    opacity:1;
+    transition:opacity 300ms;
+}
+
+.carousel-container:hover #prevButton {
+    left:40px;
+    transition:left 300ms;
+}
+
+.carousel-container:hover #nextButton {
+    right:40px;
+    transition:right 300ms;
+}
+
+.carousel-circles {
+    display:flex;
+    position:absolute;
+    gap:8px;
+    bottom:20px;
+    justify-content:center;
+    width:100%;
+}
+
+#prevButton {
+    left: 30px;
+}
+
+#nextButton {
+    right: 30px;
+}

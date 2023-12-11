@@ -4,4 +4,5 @@ from .models import *
 # Create your views here.
 
 def shop(request):
-    return render(request, 'shop.html')
+    carousels = MarketingCampaign.objects.all()
+    return render(request, 'shop.html', {'carousels': carousels})

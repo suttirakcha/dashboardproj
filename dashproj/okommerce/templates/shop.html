@@ -1,13 +1,32 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}Shop Page{% endblock %}
+{% block title %}Shop{% endblock %}
+
+{% block hero %}
+  {% include 'shop-carousel.html' %}
+{% endblock %}
 
 {% block content %}
-  <div class='flex justify-between mb-5'>
-    <h1 class='text-4xl font-bold'>Products</h1>
-    <button class='px-[14px] py-[10px] bg-blue-500 text-white rounded-md hover:bg-blue-600'>Add product</button>
-  </div>
-  <div class='grid grid-cols-3 gap-4'>
 
+<h1 class='text-4xl font-bold text-center mb-8'>Products</h1>
+
+<div class='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
+{% for product in products %}
+  <div class='border p-4 rounded-md blog-card'>
+    <h4 class='text-xs mt-3'>{{ product.product_category }}</h4>
+    <h1 class='mb-3 text-2xl font-medium'>{{ product.product_name }}</h1>
+    <p>{{ product.description }} </p>
+    {% if product.sales_price %}
+      <div class='flex items-center gap-x-2'>
+        <p class='line-through text-red-400 text-xs'>{{ product.regular_price }}</p>
+        <p>{{ product.sales_price }}</p>
+      </div>
+    {% else %}
+      <p>{{ product.regular_price }}</p>
+    {% endif %}
+        <button class='bg-blue-500 px-4 py-2 text-white rounded-md w-full mt-4'>Add to cart</button>
   </div>
+{% endfor %}
+</div>
+
 {% endblock %}

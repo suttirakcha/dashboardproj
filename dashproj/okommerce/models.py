@@ -20,9 +20,8 @@ class ProductCategory(models.Model):
 
 class Product(models.Model):
     product_name = models.CharField(max_length=255)
-    description = models.TextField
-    is_sold = models.BooleanField(default=False)
-    amount = models.IntegerField()
+    description = models.TextField()
+    amount = models.IntegerField(default=1)
     product_category = models.ForeignKey(ProductCategory, related_name='product_name', on_delete=models.CASCADE)
     regular_price = models.DecimalField(max_digits=10,decimal_places=2)
     sales_price = models.DecimalField(max_digits=10,decimal_places=2,blank=True,null=True)

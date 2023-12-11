@@ -5,9 +5,8 @@ from .models import *
 class ShowBlogPost(admin.ModelAdmin):
     list_display = ['title', 'category', 'status', 'created_at', 'updated_at']
 
-admin.site.register(BlogPost, ShowBlogPost)
-
 class ShowBlogCategories(admin.ModelAdmin):
     list_display = ['category']
 
 admin.site.register(BlogCategory, ShowBlogCategories)
+admin.site.register(BlogPost, ShowBlogPost)
