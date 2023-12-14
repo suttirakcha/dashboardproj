@@ -13,6 +13,11 @@
 <div class='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
 {% for product in products %}
   <div class='border p-4 rounded-md blog-card'>
+    {% if product.product_image %}
+      <img class='rounded-md h-[300px] w-full object-cover' src="{{ product.product_image.url }}" alt="{{ product.product_image.url }}">
+    {% else %}
+      <div class='bg-zinc-200 rounded-md w-full h-[300px]'></div>
+    {% endif %}
     <h4 class='text-xs mt-3'>{{ product.product_category }}</h4>
     <h1 class='mb-3 text-2xl font-medium'>{{ product.product_name }}</h1>
     <p>{{ product.description }} </p>
@@ -24,7 +29,10 @@
     {% else %}
       <p>฿{{ product.regular_price }}</p>
     {% endif %}
-        <button class='bg-blue-500 px-4 py-2 text-white rounded-md w-full mt-4'>Add to cart</button>
+    <div class='flex flex-col'>
+      <a href='{{ product.id }}' class='bg-blue-700 px-4 py-2 text-white rounded-md w-full mt-4 text-center'>View product</a>
+      <button class='bg-blue-500 px-4 py-2 text-white rounded-md w-full mt-4'>Add to cart</button>
+    </div>
   </div>
 {% endfor %}
 </div>
