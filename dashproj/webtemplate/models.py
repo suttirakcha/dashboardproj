@@ -5,7 +5,3 @@ from django.db import models
 class Topbar(models.Model):
     text = models.CharField(max_length=255)
     enable_topbar = models.BooleanField(default=False)
-
-class Navbar(models.Model):
-    menu = models.CharField(max_length=255)
-    link = models.SlugField()
