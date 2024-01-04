@@ -1,0 +1,73 @@
+
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="{% static 'format.css' %}" rel="stylesheet">
+</head>
+<body>
+  <main>
+    <h1 class='text-center'>สมุดจ่ายรายวัน</h1>
+    <table class='head-table'>
+      <tbody>
+        <tr>
+          <td>Name:</td>
+          <td>Journal Number:</td>
+        </tr>
+        <tr>
+          <td>Method of Payment:</td>
+          <td>Voucher Number:</td>
+        </tr>
+        <tr>
+          <td>Journal Description:</td>
+          <td>Voucher Date:</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class='main-table'>
+      <thead>
+        <tr>
+          <th>Account</th>
+          <th>Transaction Text</th>
+          <th>Cur.</th>
+          <th>Cur. amount</th>
+          <th>Exch rate</th>
+          <th>Debit</th>
+          <th>Credit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TST</td>
+          <td>Test value</td>
+          <td>2</td>
+          <td>5</td>
+          <td>10</td>
+          <td>200</td>
+          <td>300</td>
+        </tr>
+        <tr>
+          <td>TST</td>
+          <td>Test value</td>
+          <td>2</td>
+          <td>5</td>
+          <td>10</td>
+          <td>200</td>
+          <td>300</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan='5'></td>
+          <td>200</td>
+          <td>300</td>
+        </tr>
+      </tfoot>
+    </table>
+  </main>
+</body>
+</html>

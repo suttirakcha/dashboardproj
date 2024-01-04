@@ -6,6 +6,9 @@ from .forms import SignUpForm
 def home(request):
     return render(request, 'index.html')
 
+def format(request):
+    return render(request, 'format.html')
+
 def signin(request):
     return render(request, 'signin.html')
 
