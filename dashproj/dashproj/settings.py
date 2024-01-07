@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'blogadmin',
     'okommerce',
     'webtemplate',
-    'jobcate'
+    'jobcate',
+    'rest_framework'
 ]
 
 # CORS_ALLOWED_ORIGINS = ['http://localhost:5173/']
